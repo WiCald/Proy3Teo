@@ -1,0 +1,60 @@
+q_states:
+  q_list:
+    - '0'
+    - '1'
+    - '2'
+    - '3'
+  initial: '0'
+  final: '3'
+
+alphabet:
+  - a
+  - b
+
+tape_alphabet:
+  - a
+  - b
+  - "#"
+
+delta:
+  - params:
+      initial_state: '0'
+      tape_input: a
+    output:
+      final_state: '1'
+      tape_output: "#"
+      tape_displacement: R
+  - params:
+      initial_state: '1'
+      tape_input: a
+    output:
+      final_state: '1'
+      tape_output: a
+      tape_displacement: R
+  - params:
+      initial_state: '1'
+      tape_input: b
+    output:
+      final_state: '2'
+      tape_output: "#"
+      tape_displacement: R
+  - params:
+      initial_state: '2'
+      tape_input: b
+    output:
+      final_state: '2'
+      tape_output: b
+      tape_displacement: R
+  - params:
+      initial_state: '2'
+      tape_input: "#"
+    output:
+      final_state: '3'
+      tape_output: "#"
+      tape_displacement: R
+
+simulation_strings:
+  - aaabbb
+  - aabb
+  - ab
+  - aaaaaabbbbbb
